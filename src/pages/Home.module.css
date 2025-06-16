@@ -1,0 +1,33 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('../assets/images/home-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .home__title {
+    color: var(--primary-color);
+    font-size: 6rem;
+    padding-bottom: 1rem;
+  }
+
+  .home__text {
+    color: var(--primary-color);
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .home__btn {
+    background-color: #f8f8f8;
+    color: #000;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+}
