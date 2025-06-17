@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind'
+import Header from '../components/Header'
 import LoginModal from '../components/modals/Login'
 import useModalStore from '../store/modal'
 import style from './Home.module.css'
@@ -14,6 +15,7 @@ function HomePage() {
 
   return (
     <>
+      <Header />
       <div className={cx('home')}>
         <h1 className={cx('home__title')}>Quit Now</h1>
         <p className={cx('home__text')}>一百個離職的理由</p>

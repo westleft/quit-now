@@ -18,7 +18,7 @@ function Header() {
           </Link>
         </li>
         <li className={cx('header__item')}>
-          <Link to="/" className={cx('header__link')}>
+          <Link to="/reasons" className={cx('header__link')}>
             操作指南
           </Link>
         </li>

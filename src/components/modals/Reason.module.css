@@ -1,0 +1,53 @@
+.modal {
+  border: none;
+  padding: 0;
+  outline: none;
+  border-radius: 12px;
+  transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete;
+  animation: close 0.4s forwards;
+  max-width: 20vw;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+
+  &[open] {
+    animation: open 0.4s forwards;
+  }
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.modal__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.modal__date {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #666;
+}
+
+.modal__reason {
+  font-size: 1rem;
+}
+
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

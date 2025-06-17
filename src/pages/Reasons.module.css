@@ -1,0 +1,79 @@
+.reasons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 6rem 1.6rem;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/images/reason-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+
+  .reasons__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1.6rem;
+
+    .reasons__create-btn {
+      background-color: #fff;
+      border-radius: 1.6rem;
+      padding: 0.8rem 1.6rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      cursor: pointer;
+      mix-blend-mode: difference;
+    }
+  }
+}
+
+.reasons__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.reasons__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --s: 8rem; /* adjust to control the size */
+  background-color: #fff;
+
+  width: var(--s); 
+  aspect-ratio: 1;
+  --g:/calc(var(--s)*0.201) calc(var(--s)*0.201) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
+  mask: calc(50% + var(--s)*0.369) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*0.261) calc(50% + var(--s)*0.261) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*0.369) var(--g),calc(50% + var(--s)*-0.261) calc(50% + var(--s)*0.261) var(--g),calc(50% + var(--s)*-0.369) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*-0.261) calc(50% + var(--s)*-0.261) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*-0.369) var(--g),calc(50% + var(--s)*0.261) calc(50% + var(--s)*-0.261) var(--g),radial-gradient(calc(var(--s)*0.418),#000 99%,#0000 101%) subtract,calc(50% + var(--s)*0.447) calc(50% + var(--s)*0.185) var(--g),calc(50% + var(--s)*0.185) calc(50% + var(--s)*0.447) var(--g),calc(50% + var(--s)*-0.185) calc(50% + var(--s)*0.447) var(--g),calc(50% + var(--s)*-0.447) calc(50% + var(--s)*0.185) var(--g),calc(50% + var(--s)*-0.447) calc(50% + var(--s)*-0.185) var(--g),calc(50% + var(--s)*-0.185) calc(50% + var(--s)*-0.447) var(--g),calc(50% + var(--s)*0.185) calc(50% + var(--s)*-0.447) var(--g),calc(50% + var(--s)*0.447) calc(50% + var(--s)*-0.185) var(--g);
+}
+
+.reasons__list {
+  display: flex;
+  align-items: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  width: 100%;
+  padding: 1.6rem;
+
+  .done {
+    color: #000;
+    background-color: #ffffff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+  }
+
+  .reasons__item-logo {
+    width: 60%;
+    height: 60%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .reasons__item-logo:hover {
+    transform: scale(1.1);
+  }
+}
+
