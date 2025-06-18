@@ -5,9 +5,7 @@
     border-radius: 12px;
     transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete;
     animation: close 0.4s forwards;
-    max-width: 20vw;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   
     &[open] {
       animation: open 0.4s forwards;
