@@ -25,6 +25,7 @@ function CompanyPage() {
   useEffect(() => {
     getCompanyList()
   }, [])
+
   return (
     <>
       <Header />
@@ -48,7 +49,7 @@ function CompanyPage() {
           </li>
         </ul>
       </div>
-      <CreateCompanyModal />
+      <CreateCompanyModal onSuccess={getCompanyList} />
     </>
   )
 }

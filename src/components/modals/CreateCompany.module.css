@@ -29,5 +29,12 @@
     color: #fff;
     border-radius: 40px;
     font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #707070;
   }
 }
