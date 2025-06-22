@@ -1,10 +1,23 @@
 import classNames from 'classnames/bind'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { supabase } from '../api'
+import useLoginStatusStore from '../store/loginStatus'
 import style from './Header.module.css'
 
 const cx = classNames.bind(style)
 
 function Header() {
+  const navigate = useNavigate()
+  const { setIsLoggedOut, isLoggedIn } = useLoginStatusStore()
+
+  function handleLogout() {
+    supabase.auth.signOut()
+    setIsLoggedOut()
+    toast.success('登出成功')
+    navigate('/')
+  }
+
   return (
     <header className={cx('header')}>
       <ul className={cx('header__list')}>
@@ -28,6 +41,12 @@ function Header() {
           </Link>
         </li>
       </ul>
+
+      {isLoggedIn && (
+        <button type="button" onClick={handleLogout} className={cx('header__btn')}>
+          登出
+        </button>
+      )}
     </header>
   )
 }

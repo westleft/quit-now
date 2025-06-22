@@ -29,5 +29,6 @@ export default antfu({
   ],
   rules: {
     'ts/explicit-function-return-type': 'off',
+    'style/brace-style': 'off',
   },
 })

@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom'
 import { supabase } from '../api'
 import Header from '../components/Header'
 import CreateCompanyModal from '../components/modals/CreateCompany'
+import { useLogin } from '../hooks'
 import useModalStore from '../store/modal'
 import style from './Company.module.css'
 
 const cx = classNames.bind(style)
 
 function CompanyPage() {
+  useLogin()
   const [companyList, setCompanyList] = useState([])
 
   const { openModal } = useModalStore()

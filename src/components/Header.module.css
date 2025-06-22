@@ -30,3 +30,12 @@
 .header__logo {
   height: 2rem;
 }
+
+.header__btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
