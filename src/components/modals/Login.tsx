@@ -10,6 +10,9 @@ function LoginModal() {
   function handleLogin() {
     supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        redirectTo: '/',
+      },
     })
   }
 
