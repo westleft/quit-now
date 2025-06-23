@@ -30,11 +30,11 @@ function Header() {
             />
           </Link>
         </li>
-        <li className={cx('header__item')}>
+        {/* <li className={cx('header__item')}>
           <Link to="/reasons" className={cx('header__link')}>
             操作指南
           </Link>
-        </li>
+        </li> */}
         <li className={cx('header__item')}>
           <Link to="/about" className={cx('header__link')}>
             關於作者

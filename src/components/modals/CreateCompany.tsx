@@ -18,7 +18,7 @@ function CreateCompanyModal({ refreshList }: CreateCompanyModalProps) {
     e.preventDefault()
 
     const formData = new FormData(e.currentTarget)
-    const name = formData.get('name')
+    const name = formData.get('name') as string
     const { status, error } = await supabase.from('company_lists').insert({
       name,
     })
@@ -27,8 +27,7 @@ function CreateCompanyModal({ refreshList }: CreateCompanyModalProps) {
       toast.success('建立成功')
       closeModal('createCompany')
       refreshList()
-    }
-    else {
+    } else {
       toast.error(`建立失敗: ${error?.message}`)
     }
   }

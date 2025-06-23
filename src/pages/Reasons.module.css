@@ -37,19 +37,6 @@
   color: #fff;
 }
 
-.reasons__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  --s: 8rem; /* adjust to control the size */
-  background-color: #fff;
-
-  width: var(--s); 
-  aspect-ratio: 1;
-  --g:/calc(var(--s)*0.201) calc(var(--s)*0.201) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
-  mask: calc(50% + var(--s)*0.369) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*0.261) calc(50% + var(--s)*0.261) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*0.369) var(--g),calc(50% + var(--s)*-0.261) calc(50% + var(--s)*0.261) var(--g),calc(50% + var(--s)*-0.369) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*-0.261) calc(50% + var(--s)*-0.261) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*-0.369) var(--g),calc(50% + var(--s)*0.261) calc(50% + var(--s)*-0.261) var(--g),radial-gradient(calc(var(--s)*0.418),#000 99%,#0000 101%) subtract,calc(50% + var(--s)*0.447) calc(50% + var(--s)*0.185) var(--g),calc(50% + var(--s)*0.185) calc(50% + var(--s)*0.447) var(--g),calc(50% + var(--s)*-0.185) calc(50% + var(--s)*0.447) var(--g),calc(50% + var(--s)*-0.447) calc(50% + var(--s)*0.185) var(--g),calc(50% + var(--s)*-0.447) calc(50% + var(--s)*-0.185) var(--g),calc(50% + var(--s)*-0.185) calc(50% + var(--s)*-0.447) var(--g),calc(50% + var(--s)*0.185) calc(50% + var(--s)*-0.447) var(--g),calc(50% + var(--s)*0.447) calc(50% + var(--s)*-0.185) var(--g);
-}
-
 .reasons__list {
   display: flex;
   align-items: space-between;
@@ -59,21 +46,69 @@
   width: 100%;
   padding: 1.6rem;
 
-  .done {
-    color: #000;
-    background-color: #ffffff;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-  }
-
   .reasons__item-logo {
     width: 60%;
     height: 60%;
     transition: transform 0.3s ease-in-out;
   }
+}
 
-  .reasons__item-logo:hover {
-    transform: scale(1.1);
+.reasons__empty {
+  width: 100%;
+  height: 100%;
+  padding: 1.6rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+details {
+  background-color: #edededae;
+  color: #000;
+  width: 100%;
+  padding: 0 !important;
+  font-size: 1.2rem !important;
+  border-radius: 0.8rem !important;
+  &:has(summary:focus) {
+    outline: 3px solid cadetblue;
+    outline-offset: 3px;
+  }
+
+  summary {
+    padding: 1.2rem;
+  }
+
+  div {
+    padding: 1rem;
+    line-height: 140%;
+
+    h3 {
+      padding-bottom: 1rem;
+    }
   }
 }
 
+::details-content {
+  transition: height 0.5s ease, content-visibility 0.5s ease allow-discrete;
+  height: 0;
+  overflow: clip;
+}
+
+/* Browser supports interpolate-size */
+@supports (interpolate-size: allow-keywords) {
+  :root {
+      interpolate-size: allow-keywords;
+  }
+
+  [open]::details-content {
+      height: auto;
+  }
+}
+
+/* Fallback for browsers with no interpolate-size support */
+@supports not (interpolate-size: allow-keywords) {
+  [open]::details-content {
+      height: 150px;
+      overflow-y: scroll; /* In case the contents should be taller than 150px */
+  }
+}

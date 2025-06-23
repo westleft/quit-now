@@ -7,12 +7,15 @@ import CreateCompanyModal from '../components/modals/CreateCompany'
 import { useLogin } from '../hooks'
 import useModalStore from '../store/modal'
 import style from './Company.module.css'
+import type { Tables } from '../types/database'
+
+type CompanyList = Tables<'company_lists'>
 
 const cx = classNames.bind(style)
 
 function CompanyPage() {
   useLogin()
-  const [companyList, setCompanyList] = useState([])
+  const [companyList, setCompanyList] = useState<CompanyList[]>([])
 
   const { openModal } = useModalStore()
 
@@ -21,7 +24,7 @@ function CompanyPage() {
     if (error) {
       console.error(error)
     }
-    setCompanyList(data)
+    setCompanyList(data || [])
   }
 
   useEffect(() => {
@@ -51,7 +54,7 @@ function CompanyPage() {
           </li>
         </ul>
       </div>
-      <CreateCompanyModal onSuccess={getCompanyList} />
+      <CreateCompanyModal refreshList={getCompanyList} />
     </>
   )
 }

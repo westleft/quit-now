@@ -1,16 +1,48 @@
-.modal__title {
+.reason-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.reason-modal__title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
 
-.modal__date {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-  color: #666;
+.reason-modal__box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.4rem;
+  margin-bottom: 1.6rem;
+
+  label {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  input, textarea { 
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-sizing: border-box;
+  }
 }
 
-.modal__reason {
-  font-size: 1rem;
+.reason-modal__btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  cursor: pointer;
 }
-
