@@ -8,7 +8,7 @@ import ModalWrapper from './Wrapper'
 
 const cx = classNames.bind(style)
 
-type Props = {
+interface Props {
   refreshItems: () => void
 }
 
@@ -20,13 +20,13 @@ function ReasonModal({ refreshItems }: Props) {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     try {
       e.preventDefault()
-      
+
       const formData = new FormData(e.currentTarget)
 
       const { data: _data, error } = await supabase.from('reasons').insert({
         company_id: companyId as string,
-        title: formData.get('title'),
-        reason: formData.get('reason'),
+        title: formData.get('title') as string,
+        reason: formData.get('reason') as string,
       })
 
       if (error) {

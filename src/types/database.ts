@@ -102,7 +102,7 @@ export interface Database {
           id?: string
           reason: string
           title: string
-          user_id: string
+          user_id?: string
         }
         Update: {
           company_id?: string
