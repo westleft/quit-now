@@ -6,12 +6,14 @@ import ModalWrapper from './Wrapper'
 
 const cx = classNames.bind(style)
 
+const url = window.location.origin
+
 function LoginModal() {
   function handleLogin() {
     supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: '/',
+        redirectTo: url,
       },
     })
   }
